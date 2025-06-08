@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom, #ffe0f0, #dff9ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  background: #fffaff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 350px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  z-index: 10;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: url('https://i.imgur.com/OZxwZHK.png') no-repeat center/contain;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #ff6ab7;
+  margin-top: 60px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #ffe8f8;
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: opacity 0.5s ease, transform 0.3s ease;
+  opacity: 1;
+}
+
+li:hover {
+  transform: scale(1.03);
+}
+
+button {
+  background-color: #a4f6d4;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #8beac4;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  border: 2px solid #ffcaf0;
+  border-radius: 12px;
+  outline: none;
+  margin-right: 10px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Background animation container */
+.anime-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  background: linear-gradient(to bottom, #ffe0f0, #dff9ff);
+}
+
+/* Floating pink bubbles */
+.anime-bg span {
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: #ff9de2;
+  opacity: 0.8;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px #ff9de2);
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Floating stars */
+.anime-bg span.star {
+  width: 20px;
+  height: 20px;
+  background: url('https://i.imgur.com/3vIKLqB.png') no-repeat center/contain;
+  border-radius: 0;
+  filter: drop-shadow(0 0 8px #ffda75);
+}
+
+/* Floating hearts */
+.anime-bg span.heart {
+  width: 22px;
+  height: 22px;
+  background: url('https://i.imgur.com/6Vh7Gg6.png') no-repeat center/contain;
+  border-radius: 0;
+  filter: drop-shadow(0 0 8px #ff6a6a);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-50px) translateX(20px);
+    opacity: 0;
+  }
+}
